@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:test_flutter/widgets/quote.widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,137 +29,20 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.black,
         centerTitle: true,
       ),
-      // body: ListView(
-      //   children: [
-      //     Image.asset('assets/images/lake.jpeg',
-      //         width: 600, height: 240, fit: BoxFit.cover),
-      //     titleSection,
-      //     buttonSection,
-      //     textSection
-      //   ],
-      // ),
-      // body: Row(
-      //   children: <Widget>[
-      //     Expanded(child: Image.asset('assets/images/space-1.jpeg')),
-      //     Expanded(
-      //       flex: 3,
-      //       child: Container(
-      //         padding: const EdgeInsets.all(30.0),
-      //         color: Colors.cyan,
-      //         child: Text('12'),
-      //       ),
-      //     ),
-      //     Expanded(
-      //       flex: 2,
-      //       child: Container(
-      //         padding: EdgeInsets.all(30.0),
-      //         color: Colors.pinkAccent,
-      //         child: Text('2'),
-      //       ),
-      //     ),
-      //     Expanded(
-      //       flex: 1,
-      //       child: Container(
-      //         padding: EdgeInsets.all(30.0),
-      //         color: Colors.amber,
-      //         child: Text('3'),
-      //       ),
-      //     ),
-      //   ],
-      // ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const Center(
-              child: CircleAvatar(
-                radius: 40.0,
-                backgroundImage: AssetImage('assets/images/thumb.jpeg'),
-              ),
-            ),
-            Divider(
-              color: Colors.grey[800],
-              height: 60.0,
-            ),
-            const Text(
-              'NAME',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            const SizedBox(height: 10.0),
-            Text(
-              'Chun-Li',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Text(
-              'HOMETOWN',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              'Beijing, China',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Text(
-              'CURRENT NINJA LEVEL',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Text(
-              '8',
-              style: TextStyle(
-                color: Colors.amberAccent[200],
-                fontWeight: FontWeight.bold,
-                fontSize: 28.0,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.grey[400],
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  'chun.li@thenetninja.co.uk',
-                  style: TextStyle(
-                    color: Colors.grey[400],
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          Image.asset('assets/images/lake.jpeg',
+              width: 600, height: 240, fit: BoxFit.cover),
+          titleSection,
+          buttonSection,
+          textSection,
+          const QuoteWidget()
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red,
         onPressed: () {
-          print('clicked');
+          Navigator.pushNamed(context, '/location');
         },
         child: const Icon(Icons.add),
       ),
