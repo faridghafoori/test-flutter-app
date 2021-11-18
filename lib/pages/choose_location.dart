@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:test_flutter/services/world_time.dart';
 
 class ChooseLocationPage extends StatefulWidget {
@@ -23,25 +20,6 @@ class _ChooseLocationPageState extends State<ChooseLocationPage> {
     WorldTime(url: 'Asia/Seoul', location: 'Seoul', flag: 'south_korea.png'),
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
   ];
-
-  void getData() async {
-    var url = Uri.https('api.telewebion.com', '/v3/home',
-        {'is_mobile': '0', 'thumb_size': '240', 'src': 'pm'});
-    Response response = await get(url);
-    if (response.statusCode == 200) {
-      Map jsonResponse = jsonDecode(response.body);
-      print(jsonResponse);
-      print(jsonResponse['data']);
-    } else {
-      print('Request failed with status: ${response.statusCode}.');
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
 
   void updateTime(index) async {
     WorldTime instance = locations[index];
