@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/pages/home/home.dart';
-import 'package:test_flutter/pages/world_time/choose_location.dart';
-import 'package:test_flutter/pages/world_time/loading.dart';
-import 'package:test_flutter/pages/world_time/world_time.dart';
+import 'package:test_flutter/pages/choose_location.dart';
+import 'package:test_flutter/pages/home.dart';
+import 'package:test_flutter/pages/loading.dart';
 
 void main() => runApp(const MyApp());
 
@@ -21,9 +20,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
-        '/loading': (context) => LoadingPage(),
-        '/worldTime': (context) => WorldTimePage(),
+        '/': (context) => LoadingPage(),
+        '/home': (context) => HomePage(),
         '/location': (context) => ChooseLocationPage()
       },
     );
